@@ -14,7 +14,7 @@ const oxygen = Oxygen_Mono({
 
 export default function NavBar() {
   return (
-    <div className={`flex flex-col h-auto pt-6 px-6 w-full`}>
+    <div className={`flex flex-col h-auto pt-6 px-6 w-full gap-y-6`}>
       <div
         className={`h-auto w-full flex -mt-60 items-start justify-between ${oxygen.className}`}
       >
@@ -30,9 +30,27 @@ export default function NavBar() {
           <ShoppingCartOutlinedIcon className="h-8 w-8 text-[var(--cream)]" />
         </div>
         <div className="h-14 flex items-center justify-center">
-          <SignInButton/>
+          <SignInButton />
         </div>
+      </div>
+      <div
+        className={`h-auto w-full flex items-start justify-between ${oxygen.className}`}
+      >
+        {NavItems.map((item) => {
+          return <div key={item.name} className=" max-w-[7rem] text-[0.875rem] text-[var(--mainBlue)]">{item.name}</div>;
+        })}
       </div>
     </div>
   );
 }
+
+const NavItems = [
+  { name: "Home and Living", href: "/" },
+  { name: "Jewellery & Accessories", href: "/" },
+  { name: "Clothing & Shoes", href: "/" },
+  { name: "Art & Illustration", href: "/" },
+  { name: "Beauty and Bath", href: "/" },
+  { name: "Gifts", href: "/" },
+  { name: "Wedding & Party", href: "/" },
+  { name: "Toys & Games", href: "/" },
+];

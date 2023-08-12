@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <AuthContextProvider>
         <body className={inter.className}>
-          <div className="h-60 w-full bg-gradient-to-b from-[var(--transBlue)] to-[var(--cream)] -z-50"></div>
+          <div className="h-60 w-full bg-gradient-to-b from-[var(--transBlue)] to-[var(--cream)] -z-50 "></div>
           <NavBar />
           {children}
         </body>
