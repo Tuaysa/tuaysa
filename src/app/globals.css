@@ -1,10 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
 :root {
   --cream: #F4F0E9;
+  --transBlue: rgba(95, 198, 219, 0.5354);
+  --grey: #CAC4D0;
+  --mainBlue: #36AFC4;
+  --transCream: rgba(244, 240, 233, 0.6);
 }
+
+*:focus-visible {
+  outline: none;  
+  border: 2.5px solid var(--grey);
+  border-radius: 200px;
+}
+
+/* * {
+  border: solid red 2px;
+} */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -16,4 +31,16 @@
 
 body {
   background-color: var(--cream);
+}
+
+.font-inter {
+  font-family: "Inter";
+}
+
+.boxshadow {
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
+}
+
+.village {
+  background: linear-gradient(270deg, #F4F0E9 0%, rgba(255, 255, 255, 0.00) 100%), url(/village.png), lightgray 50% / cover no-repeat;
 }
