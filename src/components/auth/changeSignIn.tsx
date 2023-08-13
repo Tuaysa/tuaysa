@@ -9,7 +9,7 @@ export default function ChangeSignInButton() {
     <>
       {hasAccount ? (
         <div className="text-base">
-          <span className="opacity-60 text-[var(--grey)] duration-300">Don't have an account? </span>
+          <span className="opacity-60 text-[var(--grey)] duration-300">Don&apos;t have an account? </span>
           <span
             className="cursor-pointer text-[var(--mainBlue)] underline-offset-2 underline opacity-60 hover:opacity-100 hover:-translate-y-2 duration-300"
             onClick={() => {

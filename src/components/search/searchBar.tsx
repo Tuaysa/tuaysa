@@ -1,6 +1,12 @@
 import React from "react";
 import { Inter } from "next/font/google";
+import { Oxygen_Mono } from "next/font/google";
 import SearchIcon from "@mui/icons-material/Search";
+
+const oxygen = Oxygen_Mono({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 
 const inter = Inter({ subsets: ["latin"] });
