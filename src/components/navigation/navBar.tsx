@@ -16,7 +16,7 @@ export default function NavBar() {
   return (
     <div className={`flex flex-col h-auto pt-6 px-6 w-full gap-y-6`}>
       <div
-        className={`h-auto w-full flex -mt-60 items-start justify-between ${oxygen.className}`}
+        className={`h-auto w-full flex -mt-60 items-start justify-between font-mono`}
       >
         <TuaysaIcon />
         <SearchBar />
@@ -34,7 +34,7 @@ export default function NavBar() {
         </div>
       </div>
       <div
-        className={`h-auto w-full flex items-start justify-between ${oxygen.className}`}
+        className={`h-auto w-full flex items-start justify-between font-mono`}
       >
         {NavItems.map((item) => {
           return <div key={item.name} className=" max-w-[7rem] text-[0.875rem] text-[var(--mainBlue)]">{item.name}</div>;

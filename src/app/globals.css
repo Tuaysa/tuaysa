@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Oxygen+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Oxygen+Mono&family=Roboto+Mono:wght@300&display=swap');
 
 :root {
   --cream: #F4F0E9;
@@ -73,5 +73,9 @@ body {
 }
 
 .oxygen {
-  font-family: 'Oxygen Mono', monospace;
+  font-family: 'Oxygen Mono';
+}
+
+.roboto {
+  font-family: 'Roboto Mono'
 }

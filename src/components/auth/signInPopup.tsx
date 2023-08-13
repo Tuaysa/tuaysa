@@ -57,7 +57,7 @@ export default function SignInPopup() {
           <div className="flex-col flex items-center justify-center h-full w-1/2 py-20">
             <div className="h-auto w-auto relative">
               <TuaysaIcon className="h-auto w-44 mb-12" />
-              <div className="absolute text-[var(--mainBlue)] top-[3.75rem] w-20 -right-10">
+              <div className="absolute text-[var(--mainBlue)] top-[3.75rem] w-20 -right-10 font-mono">
                 {hasAccount ? "Welcome Home" : "Join Our Community"}
               </div>
             </div>
