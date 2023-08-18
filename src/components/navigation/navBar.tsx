@@ -19,7 +19,7 @@ export default function NavBar() {
     return (
         <div className={`flex flex-col h-auto pt-6 px-11 w-full gap-y-6`}>
             <div
-                className={`h-auto w-full flex -mt-64 items-start justify-between font-sans gap-4`}
+                className={`h-auto w-full flex -mt-64 items-start justify-between font-mono gap-4`}
             >
                 <div className="flex-1">
                     <TuaysaIcon />
@@ -43,7 +43,7 @@ export default function NavBar() {
                 </div>
             </div>
             <div
-                className={`h-auto w-full flex items-start justify-between font-sans`}
+                className={`h-auto w-full flex items-start justify-between font-mono`}
             >
                 {NavItems.map((item) => {
                     return (

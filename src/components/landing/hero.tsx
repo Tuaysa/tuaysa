@@ -14,7 +14,7 @@ export default function HeroSection() {
 
   return (
     <div className={`w-full h-auto flex items-center justify-center font-mono`}>
-      <div className="w-[29rem] h-[29rem] bg-[url(https://raw.githubusercontent.com/reannab16/tuaysa/main/public/craftytreesmall.png)] bg-cover bg-center"></div>
+      <div className="w-[29rem] h-[29rem] bg-[url(https://raw.githubusercontent.com/Tuaysa/tuaysa/main/public/cottage.png)] bg-cover bg-center"></div>
       <div className="flex flex-col w-96 items-center justify-center">
         <div
           className={`text-[var(--mainBlue)] font-mono w-96 text-center text-[2rem]`}
