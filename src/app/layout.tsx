@@ -18,7 +18,7 @@ export default function RootLayout({
             <AuthContextProvider>
                 <Head />
                 <body>
-                    <div className="h-60 w-full bg-gradient-to-b from-[var(--transBlue)] to-[var(--cream)] -z-50 "></div>
+                    <div className="h-64 w-full bg-gradient-to-b from-[var(--transBlue)] to-[var(--cream)] -z-50 "></div>
                     <div className="container mx-auto">
                         <NavBar />
                         {children}

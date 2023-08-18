@@ -17,9 +17,9 @@ const oxygen = Oxygen_Mono({
 
 export default function NavBar() {
     return (
-        <div className={`flex flex-col h-auto pt-6 px-12 w-full gap-y-6`}>
+        <div className={`flex flex-col h-auto pt-6 px-11 w-full gap-y-6`}>
             <div
-                className={`h-auto w-full flex -mt-60 items-start justify-between font-mono gap-4`}
+                className={`h-auto w-full flex -mt-64 items-start justify-between font-sans gap-4`}
             >
                 <div className="flex-1">
                     <TuaysaIcon />
@@ -29,7 +29,7 @@ export default function NavBar() {
                 </div>
                 <div className="flex flex-row gap-2 flex-1">
                     <div className="h-14 flex items-center justify-center cursor-pointer hover:-translate-y-1 duration-300">
-                        <FavoriteBorderIcon className="h-8 w-8 text-[var(--cream)]" />
+                        <FavoriteBorderIcon className="h-12 w-8 text-[var(--cream)]" />
                     </div>
                     <div className="h-14 flex items-center justify-center cursor-pointer hover:-translate-y-1 duration-300">
                         <StorefrontIcon className="h-8 w-8 text-[var(--cream)]" />
@@ -43,13 +43,13 @@ export default function NavBar() {
                 </div>
             </div>
             <div
-                className={`h-auto w-full flex items-start justify-between font-mono`}
+                className={`h-auto w-full flex items-start justify-between font-sans`}
             >
                 {NavItems.map((item) => {
                     return (
                         <Link
                             key={item.name}
-                            className=" max-w-[7rem] text-[0.875rem] text-[var(--mainBlue)]"
+                            className=" max-w-[6rem] w-auto text-[0.875rem] text-[var(--mainBlue)] text-center"
                             href={""}
                         >
                             {item.name}
