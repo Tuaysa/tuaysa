@@ -13,17 +13,17 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function SearchBar() {
   return (
-    <div className="relative flex align-middle">
-      <SearchIcon className="text-[var(--grey)]" sx={{
+    <div className="relative flex align-middle text-base">
+      <SearchIcon className="text-[var(--grey)] h-6 top-[0.625rem]" sx={{
         position: "absolute",
-        left: "1rem",
+        left: "0.7rem",
         height: "100%"
       }} />
 
       <input
         type="text"
         placeholder="Search for anything"
-        className={`flex items-center pl-16 h-12 w-full rounded-full bg-[var(--cream)] ${inter.className} text-[var(--grey)] placeholder:text-[var(--grey)] text-lg font-light`}
+        className={`flex items-center pl-11 h-11 border-2 border-[var(--grey)] w-full rounded-full bg-[var(--cream)] ${inter.className} text-[var(--grey)] placeholder:text-[var(--transGrey)] text-base font-light`}
       />
       
     </div>

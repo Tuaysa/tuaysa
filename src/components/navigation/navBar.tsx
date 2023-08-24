@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TuaysaIcon } from "../icons";
 import SearchBar from "../search/searchBar";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -9,6 +9,9 @@ import SignInButton from "./signInButton";
 import Link from "next/link";
 import { Divider } from "@mui/material";
 import { blue } from "@mui/material/colors";
+import { AuthContext } from "@/contexts/authContext";
+import UserMenu from "./userMenu";
+
 
 const oxygen = Oxygen_Mono({
     weight: "400",
@@ -16,30 +19,32 @@ const oxygen = Oxygen_Mono({
 });
 
 export default function NavBar() {
+    const {loggedIn}= useContext(AuthContext);
+
     return (
         <div className={`flex flex-col h-auto pt-6 px-11 w-full gap-y-6`}>
             <div
                 className={`h-auto w-full flex -mt-64 items-start justify-between font-mono gap-4`}
             >
-                <div className="flex-1">
-                    <TuaysaIcon />
+                <div className="flex-1 ">
+                    <TuaysaIcon className="h-12 w-auto" />
                 </div>
                 <div className="flex-auto w-full">
                     <SearchBar />
                 </div>
-                <div className="flex flex-row gap-2 flex-1">
-                    <div className="h-14 flex items-center justify-center cursor-pointer hover:-translate-y-1 duration-300">
-                        <FavoriteBorderIcon className="h-12 w-8 text-[var(--cream)]" />
+                <div className={`flex flex-row flex-1 ${loggedIn? "gap-4": "gap-3"}`}>
+                    <div className="h-12 flex items-center justify-center cursor-pointer hover:-translate-y-1 duration-300">
+                        <FavoriteBorderIcon className="h-6 w-6 text-[var(--mainBlue)]" />
                     </div>
-                    <div className="h-14 flex items-center justify-center cursor-pointer hover:-translate-y-1 duration-300">
-                        <StorefrontIcon className="h-8 w-8 text-[var(--cream)]" />
+                    <div className="h-12 flex items-center justify-center cursor-pointer hover:-translate-y-1 duration-300">
+                        <StorefrontIcon className="h-6 w-6 text-[var(--mainBlue)]" />
                     </div>
-                    <div className="h-14 flex items-center justify-center cursor-pointer hover:-translate-y-1 duration-300">
-                        <ShoppingCartOutlinedIcon className="h-8 w-8 text-[var(--cream)]" />
+                    <div className="h-12 flex items-center justify-center cursor-pointer hover:-translate-y-1 duration-300">
+                        <ShoppingCartOutlinedIcon className="h-6 w-6 text-[var(--mainBlue)]" />
                     </div>
                 </div>
-                <div className="h-14 flex items-center justify-center flex-1">
-                    <SignInButton />
+                <div className="h-12 flex items-center justify-center flex-1">
+                    {loggedIn ? <UserMenu/>:<SignInButton />}
                 </div>
             </div>
             <div
@@ -57,7 +62,7 @@ export default function NavBar() {
                     );
                 })}
             </div>
-            {/* <Divider sx={{ bgcolor: "#36AFC4" }} /> */}
+            {/* <Divider sx={{ bgcolor: "#F4F0E9" }} /> */}
         </div>
     );
 }

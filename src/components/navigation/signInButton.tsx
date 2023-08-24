@@ -14,7 +14,7 @@ export default function SignInButton() {
           setSignInPopupVisible(true);
           setHasAccount(true);
         }}
-        className=" items-center justify-center text-center text-[var(--mainBlue)] w-32 px-2 h-12 border-2 border-[var(--mainBlue)] rounded-full text-base hover:bg-[var(--mainBlue)] hover:text-[var(--transCream)] duration-300 hover:text-opacity-5 cursor-pointer hover:-translate-y-1"
+        className=" items-center justify-center text-center text-[var(--mainBlue)] w-28 h-11 border-2 border-[var(--mainBlue)] rounded-full text-base hover:bg-[var(--mainBlue)] hover:text-[var(--transCream)] duration-300 hover:text-opacity-5 cursor-pointer hover:-translate-y-1"
       >
         Sign In
       </button>
