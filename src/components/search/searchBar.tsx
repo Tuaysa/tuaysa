@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function SearchBar() {
   return (
     <div className="relative flex align-middle text-base">
-      <SearchIcon className="text-[var(--grey)] h-6 top-[0.625rem]" sx={{
+      <SearchIcon className="text-[var(--grey)] h-6 top-[11px] bottom-[11px]" sx={{
         position: "absolute",
         left: "0.7rem",
         height: "100%"
