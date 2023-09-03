@@ -18,7 +18,7 @@ export const connectToMongoDB = async () => {
         else {
             console.log("unexpected connection state", connection.readyState)
         }
-    } catch (error) {
+    } catch (error: any) {
         
         console.log("Error connecting to MongoDB: ", error);
         throw error

@@ -6,6 +6,8 @@ import AuthContextProvider from "@/contexts/authContext";
 import { Inter } from "next/font/google";
 import Head from "./head";
 import { Toaster } from "react-hot-toast";
+import { useEffect } from "react";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +16,7 @@ export default function RootLayout({
 }: {
     children: React.ReactNode;
 }) {
+    
     return (
         <html lang="en" className={inter.className}>
             <AuthContextProvider>

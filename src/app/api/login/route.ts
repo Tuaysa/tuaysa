@@ -8,7 +8,6 @@ import jwt from "jsonwebtoken";
 export async function POST(req: Request) {
     try {
         await connectToMongoDB();
-        console.log("passing")
         
         const body = await req.json();
         const {email, password} = body;
@@ -21,7 +20,6 @@ export async function POST(req: Request) {
 
         const isUserPresent=await User.findOne({email});
         if (!isUserPresent){
-            console.log("passing 2")
             return NextResponse.json({message:"invalid email"}, {status:409});
         } else {
 
@@ -31,16 +29,25 @@ export async function POST(req: Request) {
             // const user = new User({email, password:hashedPassword});
             // await User.create({email, password:hashedPassword});
             // await user.save();
-            const token = jwt.sign({email}, 'rfneribfwoeirnaijnfoierbf')
-            const response = NextResponse.json({message:"User Login Successful"}, {status: 201})
-            response.cookies.set('token', token);
-            return response;
+            const secret= process.env.SECRET; 
+            if (secret) {
+                const token = jwt.sign({ exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24 * 7), email}, secret)
+                const response = NextResponse.json({message:"User Login Successful"}, {status: 201})
+                response.cookies.set({name:'token', value:token, maxAge: 60 * 60 * 24 * 7, httpOnly: true, sameSite: "strict", secure: true});
+            
+                return response;
+            }
+
+            else {
+                return NextResponse.json({message:"An error occurred while logging in the user"}, {status:500})
+            }
+            
         }
         
         
     } catch (error) {
         console.log(error);
-        return NextResponse.json({message: "An error occurred while registering the user", error}, {status:500})
+        return NextResponse.json({message: "An error occurred", error}, {status:500})
     
     }
 } 
