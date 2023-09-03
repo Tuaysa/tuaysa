@@ -21,10 +21,12 @@ export default function RootLayout({
         <html lang="en" className={inter.className}>
             <AuthContextProvider>
                 <Head />
-                <body>
+                <body className="items-center justify-center flex flex-col">
                     <div className="h-64 w-full bg-gradient-to-b from-[var(--transBlue)] to-[var(--cream)] -z-50 "></div>
+                    <NavBar />
                     <div className="container mx-auto">
-                        <NavBar />
+                    
+                        
                         <Toaster/>
                         {children}
                     </div>
