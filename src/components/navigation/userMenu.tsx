@@ -105,7 +105,7 @@ export default function UserMenu() {
   };
   const { setLoggedIn } = useContext(AuthContext);
   const { setAddress } = useContext(AuthContext);
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="h-12 flex items-center justify-center cursor-pointer duration-300 relative">
@@ -143,8 +143,8 @@ export default function UserMenu() {
         <Divider sx={{ my: 0.5 }} />
         <MenuItem
           onClick={() => {
-            router.push('/accountSettings')
-            handleClose;
+            router.push("/accountSettings");
+            handleClose();
           }}
           disableRipple
         >

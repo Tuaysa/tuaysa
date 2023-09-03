@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { Inter } from "next/font/google";
 import { AuthContext } from "@/contexts/authContext";
 import { Divider, IconButton } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,6 +12,7 @@ const inter = Inter({
 export default function AccountSettings() {
   const [category, setCategory] = useState("Login & Security");
   const {address}= useContext(AuthContext);
+  const router = useRouter();
 
   return (
     <main
@@ -53,7 +55,7 @@ export default function AccountSettings() {
               <div className=" font-semibold">Email:</div>
               <div>{address}</div>
             </div>
-            <div className="px-8 py-1 border-[var(--transGrey)] border-[1px] rounded-xl shadow-sm hover:bg-[var(--vtransGrey)] transition-300 cursor-pointer">Edit</div>
+            <div className="px-8 py-1 border-[var(--transGrey)] border-[1px] rounded-xl shadow-sm hover:bg-[var(--vtransGrey)] transition-300 cursor-pointer" onClick={()=>{router.push('/accountSettings/email')}}>Edit</div>
           </div>
           <div className="flex w-full h-auto pb-6 border-b-[1px] border-b-[var(--transGrey)] px-8 justify-between items-center">
             <div className="flex-col">

@@ -34,12 +34,16 @@ export default function AuthContextProvider({children}:{children: React.ReactNod
 
     useEffect(()=> {
         axios.get('api/checkToken').then(res=> {
-            console.log(res.data.data.email)
+            console.log(res.data)
             console.log('haha')
-            if (res.data.authenticated) {
+            if (res.data.authenticated && res.data.data.email) {
                 setLoggedIn(true);
-                setAddress(res.data.data.email);
-                console.log(address);
+                const email = res.data.data.email
+                if (email) {
+                    setAddress(res.data.data.email);
+                    console.log(address);
+                }
+                
             }
         }).catch(error=>{
             console.log('error checking user authentification', error);
