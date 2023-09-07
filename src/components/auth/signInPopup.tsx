@@ -1,23 +1,24 @@
-"use client"
+"use client";
 import { AuthContext } from "@/contexts/authContext";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import SignUpPopup from "./signUpPopup";
 import LogInPopup from "./logInPopup";
+import ChooseUserType from "./chooseUserType";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function SignInPopup() {
   const { setSignInPopupVisible } = useContext(AuthContext);
   const { hasAccount } = useContext(AuthContext);
-  
+  const { nextStep } = useContext(AuthContext);
+  const {setNextStep} = useContext(AuthContext);
 
   const closePopup = () => {
     setSignInPopupVisible(false);
+    setNextStep(false);
   };
-
-  
 
   return (
     <div
@@ -33,7 +34,7 @@ export default function SignInPopup() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        {hasAccount? <LogInPopup/>:<SignUpPopup/>}
+        {nextStep ? <ChooseUserType/> : hasAccount ? <LogInPopup /> : <SignUpPopup />}
       </motion.div>
     </div>
   );

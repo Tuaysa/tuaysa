@@ -12,6 +12,12 @@ interface AuthContextType {
     setSignInPopupVisible: React.Dispatch<React.SetStateAction<boolean>>;
     address: string;
     setAddress: React.Dispatch<React.SetStateAction<string>>;
+    nextStep: boolean;
+    setNextStep: React.Dispatch<React.SetStateAction<boolean>>;
+    signUpEmail: string;
+    setSignUpEmail: React.Dispatch<React.SetStateAction<string>>;
+    signUpPass: string;
+    setSignUpPass: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const AuthContext = createContext<AuthContextType>({
@@ -23,6 +29,12 @@ export const AuthContext = createContext<AuthContextType>({
     setSignInPopupVisible: ()=>{},
     address: '',
     setAddress: ()=>{},
+    nextStep: false,
+    setNextStep: ()=>{},
+    signUpEmail: '',
+    setSignUpEmail: ()=>{},
+    signUpPass: '',
+    setSignUpPass: ()=>{},
 })
 
 export default function AuthContextProvider({children}:{children: React.ReactNode}) {
@@ -31,6 +43,9 @@ export default function AuthContextProvider({children}:{children: React.ReactNod
     const [hasAccount, setHasAccount] = useState(true);
     const [address, setAddress] = useState('');
     const [signInPopupVisible, setSignInPopupVisible] = useState(false);
+    const [nextStep, setNextStep] = useState(true);
+    const [signUpEmail, setSignUpEmail] = useState('');
+    const [signUpPass, setSignUpPass] = useState('');
 
     useEffect(()=> {
         axios.get('api/checkToken').then(res=> {
@@ -53,7 +68,7 @@ export default function AuthContextProvider({children}:{children: React.ReactNod
 
 
     return(
-        <AuthContext.Provider value={{loggedIn, setLoggedIn, hasAccount, setHasAccount, signInPopupVisible, setSignInPopupVisible, address, setAddress}}>
+        <AuthContext.Provider value={{loggedIn, setLoggedIn, hasAccount, setHasAccount, signInPopupVisible, setSignInPopupVisible, address, setAddress, nextStep, setNextStep, signUpEmail, setSignUpEmail, signUpPass, setSignUpPass}}>
             {children}
         </AuthContext.Provider>
     )

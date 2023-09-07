@@ -6,10 +6,10 @@
 :root {
   --cream: #F4F0E9;
   --transBlue: rgba(95, 198, 219, 0.533);
-  --grey: #CAC4D0;
-  --darkGrey: #a49ea9;
-  --transGrey: rgba(202, 196, 208, 0.7);
-  --vtransGrey: hsla(270, 11%, 79%, 0.2);
+  --grey: #AC90A6;
+  --darkGrey: rgb(127, 119, 133);
+  --transGrey: rgba(172, 144, 166, 0.7);
+  --vtransGrey: rgba(172, 144, 166, 0.2);
   --mainBlue: hsl(189, 57%, 49%);
   --shadowBlue: hsl(200.2, 50.8%, 60.8%);
   --transCream: rgba(244, 240, 233, 0.6);

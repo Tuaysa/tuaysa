@@ -15,9 +15,11 @@ export default function SignUpPopup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setHasAccount } = useContext(AuthContext);
+  const { setNextStep } = useContext(AuthContext);
 
   const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
 
     axios
       .post(
@@ -31,8 +33,9 @@ export default function SignUpPopup() {
       )
       .then((res) => {
         console.log(res);
-        toast.success("Registered Successfully");
-        setHasAccount(true);
+        // toast.success("Registered Successfully");
+        setNextStep(true);
+        // setHasAccount(true);
       })
       .catch((error) => {
         console.log(error.response.data.message);

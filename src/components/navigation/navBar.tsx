@@ -24,7 +24,7 @@ export default function NavBar() {
 
   return (
     <div
-      className={`flex flex-col h-auto pt-4 px-11 w-full gap-y-4 max-w-[1380px]`}
+      className={`flex flex-col h-auto pt-4 px-11 w-full gap-y-4 max-w-[1380px] items-center`}
     >
       <div
         className={`h-auto w-full flex -mt-64 items-start justify-between font-mono gap-4`}
@@ -62,7 +62,7 @@ export default function NavBar() {
         </div>
       </div>
       <div
-        className={`h-auto w-full flex items-start justify-between font-mono`}
+        className={`h-auto w-full flex items-start justify-between font-mono gap-x-4`}
       >
         {NavItems.map((item) => {
           return (
@@ -76,7 +76,7 @@ export default function NavBar() {
           );
         })}
       </div>
-      <Divider sx={{ bgcolor: "rgba(202, 196, 208, 0.2)" }} />
+      <Divider sx={{ bgcolor: "rgba(202, 196, 208, 0.2)", width: "100vw" }} />
     </div>
   );
 }
