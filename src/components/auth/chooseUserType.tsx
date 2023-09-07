@@ -24,6 +24,10 @@ export default function ChooseUserType() {
       exit={{ scale: 0.7, opacity: 0 }}
     >
       <div className="w-1/2 flex flex-col items-center justify-center py-16 px-9">
+        <div className=".shop h-40 w-40 bg-cover bg-center mt-4" style={{
+          backgroundImage:
+            "url(https://raw.githubusercontent.com/reannab16/tuaysa/main/public/shop.png)",
+        }}></div>
         <div className={`${oxygen.className} text-[var(--mainBlue)] text-xl mb-6`}>
           Shop
         </div>
@@ -51,7 +55,11 @@ export default function ChooseUserType() {
       </div>
 
 
-      <div className="w-1/2 border-l-[1px] border-l-[var(--transGrey)] border-solid flex flex-col items-center justify-center py-16 nextStep">
+      <div className="w-1/2 border-l-[1px] border-l-[var(--transGrey)] border-solid flex flex-col items-center justify-center py-16 nextStep relative ">
+      <div className=".shopper bg-cover bg-center h-40 w-40 mt-4" style={{
+          backgroundImage:
+            "url(https://raw.githubusercontent.com/reannab16/tuaysa/main/public/shopper.png)",
+        }}></div>
         <div className={`${oxygen.className} text-[var(--mainBlue)] text-xl mb-6`}>
           Shopper
         </div>

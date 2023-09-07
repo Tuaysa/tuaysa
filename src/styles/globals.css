@@ -82,3 +82,28 @@ body {
 .roboto {
   font-family: 'Roboto Mono'
 }
+
+.nextStep::after {
+  content: "or";
+  writing-mode: vertical-lr;
+  color: var(--grey);
+  position: absolute;
+  left: 0px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  left: -0.625rem;
+  background-color: var(--cream);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  top: auto;
+  bottom: auto;
+
+}
+
+.shop {
+  background-image: url(https://raw.githubusercontent.com/Tuaysa/tuaysa/main/public/shop.png);
+}
+
+.shopper {
+  background-image: url(https://raw.githubusercontent.com/Tuaysa/tuaysa/main/public/shopper.png);
+}
